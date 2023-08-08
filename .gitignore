@@ -49,7 +49,7 @@ bin/
 /gradlew
 /gradlew.*
 *.txt
-
+/src/main/resources/*
 
 
 # Github
