@@ -43,13 +43,12 @@ bin/
 
 
 # Custom
-/.idea
-/*/.idea
-/*/gradle/
-/*/gradlew
-/*/gradlew.*
-*.txt
 
+/.idea
+/gradle/
+/gradlew
+/gradlew.*
+*.txt
 
 
 
