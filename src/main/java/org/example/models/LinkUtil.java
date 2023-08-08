@@ -16,7 +16,5 @@ public class LinkUtil {
     private String descricao;
     private String url;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "questao_id")
-    private Questao questao;
+    private Long question_id;
 }

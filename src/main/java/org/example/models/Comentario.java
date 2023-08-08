@@ -16,8 +16,6 @@ public class Comentario {
 
     private String comentario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "questao_id")
-    private Questao questao;
+    private Long question_id;
 
 }

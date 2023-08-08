@@ -17,20 +17,11 @@ public class Questao {
 
     private String titulo;
 
-    private String opcoes;
+    private List<String> opcoes;
 
     private String resposta;
 
-    private String options;
-
-
     @Basic(fetch = FetchType.LAZY)
-    private String gabarito_comentado;
+    private List<String> gabarito_comentado;
 
-    @OneToMany(mappedBy = "questao", cascade = CascadeType.ALL, fetch =
-            FetchType.LAZY)
-    private List<Comentario> comentarios;
-    @OneToMany(mappedBy = "questao", cascade = CascadeType.ALL, fetch =
-            FetchType.LAZY)
-    private List<LinkUtil> links_uteis;
 }
