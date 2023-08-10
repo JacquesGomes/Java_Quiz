@@ -24,4 +24,20 @@ public class Questao {
     @Basic(fetch = FetchType.LAZY)
     private List<String> gabarito_comentado;
 
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setOpcoes(List<String> opcoes) {
+        this.opcoes = opcoes;
+    }
+
+    public void setResposta(String resposta) {
+        this.resposta = resposta;
+    }
+
+    public void setGabarito_comentado(List<String> gabarito_comentado) {
+        this.gabarito_comentado = gabarito_comentado;
+    }
 }
