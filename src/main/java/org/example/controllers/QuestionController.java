@@ -26,6 +26,11 @@ public class QuestionController {
         return service.getPaginatedQuestions(pageable);
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("/{questionId}")
+    public List<String> getGabarito(@PathVariable Long questionId) {
+        return service.getGabarito(questionId);
+    }
 
     @PostMapping
     public Questao create(@RequestBody QuestaoForm form){

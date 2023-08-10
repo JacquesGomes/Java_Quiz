@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionServiceImpl implements IQuestionService{
@@ -29,5 +30,11 @@ public class QuestionServiceImpl implements IQuestionService{
 
     public Page<Questao> getPaginatedQuestions(Pageable pageable) {
         return repository.findAll(pageable);
+    }
+
+    public List<String> getGabarito(Long id) {
+        Optional<Questao> optionalQuestao = repository.findById(id);
+        Questao questao = optionalQuestao.get();
+        return questao.getGabarito_comentado();
     }
 }

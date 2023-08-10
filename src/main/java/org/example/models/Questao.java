@@ -40,4 +40,8 @@ public class Questao {
     public void setGabarito_comentado(List<String> gabarito_comentado) {
         this.gabarito_comentado = gabarito_comentado;
     }
+
+    public List<String> getGabarito_comentado() {
+        return gabarito_comentado;
+    }
 }

@@ -12,4 +12,6 @@ public interface IQuestionService {
     Questao create(QuestaoForm form);
 
     Page<Questao> getPaginatedQuestions(Pageable pageable);
+
+    List<String> getGabarito(Long id);
 }
