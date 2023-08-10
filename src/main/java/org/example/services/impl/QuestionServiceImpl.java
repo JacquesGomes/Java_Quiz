@@ -5,6 +5,8 @@ import org.example.models.form.QuestaoForm;
 import org.example.repositories.QuestionRepository;
 import org.example.services.IQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,11 +18,6 @@ public class QuestionServiceImpl implements IQuestionService{
     private QuestionRepository repository;
 
     @Override
-    public List<Questao> getAll(){
-        return repository.findAll();
-    }
-
-    @Override
     public Questao create(QuestaoForm form) {
         Questao questao = new Questao();
         questao.setTitulo(form.getTitulo());
@@ -28,7 +25,9 @@ public class QuestionServiceImpl implements IQuestionService{
         questao.setOpcoes(form.getOpcoes());
         questao.setGabarito_comentado(form.getGabaritoComentado());
         return repository.save(questao);
+    }
 
-
+    public Page<Questao> getPaginatedQuestions(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 }

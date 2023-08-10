@@ -16,6 +16,18 @@ public class Comentario {
 
     private String comentario;
 
-    private Long question_id;
+    @Column(name ="question_id")
+    private Long questionId;
 
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
+    }
 }

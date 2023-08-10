@@ -2,11 +2,12 @@ package org.example.controllers;
 
 
 import org.example.models.Comentario;
+import org.example.models.Questao;
+import org.example.models.form.ComentarioForm;
+import org.example.models.form.QuestaoForm;
 import org.example.services.impl.ComentarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,8 +18,20 @@ public class ComentarioController {
     @Autowired
     private ComentarioServiceImpl service;
 
+    @PostMapping
+    public Comentario create(@RequestBody ComentarioForm form){
+        return service.create(form);
+    }
+    @CrossOrigin(origins = "*")
+    @GetMapping("/{questionId}")
+    public List<Comentario> getAllById(@PathVariable Long questionId){
+        return service.getAllById(questionId);
+    }
+
     @GetMapping
     public List<Comentario> getAll(){
         return service.getAll();
     }
+
+
 }
