@@ -22,12 +22,13 @@ public class ComentarioController {
     public Comentario create(@RequestBody ComentarioForm form){
         return service.create(form);
     }
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "https://jacquesgomes.com.br/quizTech/")
     @GetMapping("/{questionId}")
     public List<Comentario> getAllById(@PathVariable Long questionId){
         return service.getAllById(questionId);
     }
 
+    @CrossOrigin(origins = "https://jacquesgomes.com.br/quizTech/")
     @GetMapping
     public List<Comentario> getAll(){
         return service.getAll();

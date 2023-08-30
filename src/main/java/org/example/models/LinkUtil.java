@@ -17,4 +17,20 @@ public class LinkUtil {
     private String url;
 
     private Long question_id;
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setQuestion_id(Long question_id) {
+        this.question_id = question_id;
+    }
 }

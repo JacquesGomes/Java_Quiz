@@ -19,24 +19,18 @@ public class QuestionController {
     @Autowired
     private QuestionServiceImpl service;
 
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "https://jacquesgomes.com.br/quizTech/")
     @GetMapping
     public Page<Questao> getQuestoesPaginadas(@RequestParam(defaultValue = "0") int page) {
         Pageable pageable = PageRequest.of(page, 5);
         return service.getPaginatedQuestions(pageable);
     }
 
-    @CrossOrigin(origins = "*")
-    @GetMapping("/{questionId}")
+    @CrossOrigin(origins = "https://jacquesgomes.com.br/quizTech/")
+    @GetMapping("/gabarito/{questionId}")
     public List<String> getGabarito(@PathVariable Long questionId) {
         return service.getGabarito(questionId);
     }
-
-    @PostMapping
-    public Questao create(@RequestBody QuestaoForm form){
-        return service.create(form);
-    }
-
     @PostMapping("/create-multiple")
     public List<Questao> createMultiple(@RequestBody List<QuestaoForm> forms) {
         List<Questao> createdQuestoes = new ArrayList<>();
@@ -47,5 +41,11 @@ public class QuestionController {
         }
 
         return createdQuestoes;
+    }
+
+    @PostMapping
+    public Questao create(@RequestBody QuestaoForm form){
+
+        return service.create(form);
     }
 }
